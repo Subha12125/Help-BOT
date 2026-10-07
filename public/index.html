@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Rani — Emotional Wellness</title>
+  <meta
+    name="description"
+    content="Rani is a private emotional wellness companion."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="app">
+
+    <header class="topbar">
+
+      <div class="brand">
+        <div class="brand-mark">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 4c-1.7 2.8-4.2 4.5-7 5.1 2.1 1.4 3.4 3.3 3.7 5.8 1.1-1.5 2.1-2.5 3.3-3.1 1.2.6 2.2 1.6 3.3 3.1.3-2.5 1.6-4.4 3.7-5.8C16.2 8.5 13.7 6.8 12 4Z"/>
+            <path d="M12 11.8V20"/>
+          </svg>
+        </div>
+
+        <div class="brand-copy">
+          <div class="brand-name-row">
+            <h1>Rani</h1>
+            <span class="online-status">
+              <span></span>
+              Online
+            </span>
+          </div>
+          <p>Emotional wellness companion</p>
+        </div>
+      </div>
+
+      <div class="topbar-actions">
+
+        <button
+          class="toolbar-btn"
+          id="toggleToolsBtn"
+          type="button"
+          aria-label="Open wellness tools"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v18M3 12h18"/>
+          </svg>
+          <span>Wellness Tools</span>
+        </button>
+
+        <button
+          class="icon-btn"
+          id="soundToggleBtn"
+          type="button"
+          aria-label="Toggle sound"
+          title="Toggle sound"
+        >
+          <svg id="soundOnIcon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M11 5 6 9H3v6h3l5 4V5Z"/>
+            <path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/>
+          </svg>
+
+          <svg
+            id="soundOffIcon"
+            class="hidden"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M11 5 6 9H3v6h3l5 4V5Z"/>
+            <path d="m17 9 5 5M22 9l-5 5"/>
+          </svg>
+        </button>
+
+        <button
+          class="icon-btn"
+          id="clearChatBtn"
+          type="button"
+          aria-label="Clear conversation"
+          title="Clear conversation"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16"/>
+            <path d="M9 7V4h6v3"/>
+            <path d="m6 7 1 13h10l1-13"/>
+            <path d="M10 11v5M14 11v5"/>
+          </svg>
+        </button>
+
+        <button
+          class="crisis-btn"
+          id="crisisModalBtn"
+          type="button"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3 20 6v5c0 5.2-3.4 8.7-8 10-4.6-1.3-8-4.8-8-10V6l8-3Z"/>
+            <path d="M12 8v5"/>
+            <path d="M12 16h.01"/>
+          </svg>
+          Crisis Support
+        </button>
+
+      </div>
+    </header>
+
+    <main class="workspace">
+
+      <section class="chat-panel">
+
+        <div
+          class="messages"
+          id="messagesContainer"
+          role="log"
+          aria-live="polite"
+        >
+
+          <div class="welcome" id="welcomeCard">
+
+            <div class="welcome-mark">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 4c-1.7 2.8-4.2 4.5-7 5.1 2.1 1.4 3.4 3.3 3.7 5.8 1.1-1.5 2.1-2.5 3.3-3.1 1.2.6 2.2 1.6 3.3 3.1.3-2.5 1.6-4.4 3.7-5.8C16.2 8.5 13.7 6.8 12 4Z"/>
+                <path d="M12 11.8V20"/>
+              </svg>
+            </div>
+
+            <h2>How can I help you today?</h2>
+
+            <p>
+              Talk freely. You can share what's on your mind,
+              ask for a calming exercise, or simply have a conversation.
+            </p>
+
+            <div class="privacy-note">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 10v6"/>
+                <path d="M12 7h.01"/>
+              </svg>
+              <span>Private in-session conversation · AI wellness support</span>
+            </div>
+
+            <div class="quick-section">
+              <span class="section-label">Start with how you're feeling</span>
+
+              <div class="quick-actions">
+
+                <button
+                  class="quick-action"
+                  data-prompt="I'm feeling anxious and my thoughts are racing right now. Can you help me?"
+                >
+                  <span class="quick-icon">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M12 3a9 9 0 1 0 9 9"/>
+                      <path d="M12 7v5l3 2"/>
+                    </svg>
+                  </span>
+                  <span>Anxious</span>
+                </button>
+
+                <button
+                  class="quick-action"
+                  data-prompt="I'm overwhelmed with everything going on and don't know where to start."
+                >
+                  <span class="quick-icon">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M4 7h16M4 12h11M4 17h7"/>
+                    </svg>
+                  </span>
+                  <span>Overwhelmed</span>
+                </button>
+
+                <button
+                  class="quick-action"
+                  data-prompt="I'm feeling down, sad, and low on energy today."
+                >
+                  <span class="quick-icon">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M7 15c1.2 1.2 2.8 2 5 2s3.8-.8 5-2"/>
+                      <path d="M8 9h.01M16 9h.01"/>
+                    </svg>
+                  </span>
+                  <span>Feeling low</span>
+                </button>
+
+                <button
+                  class="quick-action"
+                  data-prompt="I'm completely exhausted and struggling to sleep or unwind."
+                >
+                  <span class="quick-icon">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M18 4a8 8 0 1 0 2 14 8 8 0 0 1-2-14Z"/>
+                    </svg>
+                  </span>
+                  <span>Exhausted</span>
+                </button>
+
+                <button
+                  class="quick-action"
+                  data-prompt="I feel lonely and just want a warm, kind conversation."
+                >
+                  <span class="quick-icon">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M20 11.5a7.5 7.5 0 0 1-8 7.5 8.5 8.5 0 0 1-4-.9L4 20l1.2-3.4A7.3 7.3 0 0 1 4.5 12 7.5 7.5 0 0 1 12 4.5a7.5 7.5 0 0 1 8 7Z"/>
+                    </svg>
+                  </span>
+                  <span>Feeling lonely</span>
+                </button>
+
+                <button
+                  class="quick-action"
+                  data-prompt="Can you guide me through a 3-minute relaxing mindfulness exercise?"
+                >
+                  <span class="quick-icon">
+                    <svg viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="8"/>
+                      <path d="M12 8v4l2.5 2"/>
+                    </svg>
+                  </span>
+                  <span>Need to calm down</span>
+                </button>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <footer class="composer-area">
+
+          <form id="chatForm" class="composer">
+
+            <textarea
+              id="messageInput"
+              rows="1"
+              placeholder="Write a message..."
+              aria-label="Message"
+            ></textarea>
+
+            <button
+              id="sendBtn"
+              class="send-btn"
+              type="submit"
+              aria-label="Send message"
+              title="Send message"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m22 2-7 20-4-9-9-4Z"/>
+                <path d="M22 2 11 13"/>
+              </svg>
+            </button>
+
+          </form>
+
+          <div class="composer-meta">
+            <span>Enter to send</span>
+            <span>Shift + Enter for a new line</span>
+          </div>
+
+        </footer>
+
+      </section>
+
+      <aside class="tools-panel" id="toolsSidebar">
+
+        <div class="tools-header">
+
+          <div>
+            <h2>Wellness Tools</h2>
+            <p>Simple exercises for the moment you're in.</p>
+          </div>
+
+          <button
+            class="icon-btn"
+            id="closeSidebarBtn"
+            type="button"
+            aria-label="Close wellness tools"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m6 6 12 12M18 6 6 18"/>
+            </svg>
+          </button>
+
+        </div>
+
+        <div class="tools-scroll">
+
+          <article class="tool">
+
+            <div class="tool-heading">
+              <div class="tool-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 4c-4 0-7 3-7 7 0 3.5 2.2 6.5 5.5 7.5"/>
+                  <path d="M12 4c4 0 7 3 7 7 0 3.5-2.2 6.5-5.5 7.5"/>
+                  <path d="M12 4v16"/>
+                </svg>
+              </div>
+
+              <div>
+                <h3>Box Breathing</h3>
+                <p>Four equal breathing phases.</p>
+              </div>
+            </div>
+
+            <div class="breathing-area">
+              <div class="breathing-orb" id="breathingOrb">
+                <div class="breathing-orb-inner"></div>
+
+                <div class="breathing-status">
+                  <strong id="breathingPhaseText">Ready</strong>
+                  <span id="breathingCounter">4s</span>
+                </div>
+              </div>
+            </div>
+
+            <button
+              class="primary-btn"
+              id="startBreathingBtn"
+              type="button"
+            >
+              Begin breathing
+            </button>
+
+          </article>
+
+          <article class="tool">
+
+            <div class="tool-heading">
+              <div class="tool-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="8"/>
+                  <circle cx="12" cy="12" r="3"/>
+                  <path d="M12 4V2M12 22v-2M4 12H2M22 12h-2"/>
+                </svg>
+              </div>
+
+              <div>
+                <h3>5-4-3-2-1 Grounding</h3>
+                <p>Bring your attention back to the present.</p>
+              </div>
+            </div>
+
+            <div class="step-progress">
+              <span id="groundingStepPill">Step 1 of 5</span>
+
+              <div class="progress-track">
+                <div id="groundingProgress"></div>
+              </div>
+            </div>
+
+            <div class="grounding-content">
+              <span class="grounding-number" id="groundingNumber">5</span>
+
+              <p id="groundingInstruction">
+                Notice <strong>5 things you can see</strong> around you.
+                Observe their shapes, colors, or shadows.
+              </p>
+            </div>
+
+            <div class="tool-actions">
+
+              <button
+                class="secondary-btn"
+                id="groundingPrevBtn"
+                type="button"
+                disabled
+              >
+                <svg viewBox="0 0 24 24">
+                  <path d="m15 18-6-6 6-6"/>
+                </svg>
+                Previous
+              </button>
+
+              <button
+                class="primary-btn"
+                id="groundingNextBtn"
+                type="button"
+              >
+                Next
+                <svg viewBox="0 0 24 24">
+                  <path d="m9 18 6-6-6-6"/>
+                </svg>
+              </button>
+
+            </div>
+
+          </article>
+
+          <article class="tool">
+
+            <div class="tool-heading">
+              <div class="tool-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 5h14v14H5z"/>
+                  <path d="M8 10h8M8 14h5"/>
+                </svg>
+              </div>
+
+              <div>
+                <h3>Gentle Reminder</h3>
+                <p>A thought worth keeping for today.</p>
+              </div>
+            </div>
+
+            <blockquote id="affirmationText">
+              "You do not have to carry everything at once."
+            </blockquote>
+
+            <button
+              class="text-btn"
+              id="newAffirmationBtn"
+              type="button"
+            >
+              New reminder
+
+              <svg viewBox="0 0 24 24">
+                <path d="M20 12a8 8 0 0 1-14.9 4"/>
+                <path d="M4 16v-4h4"/>
+                <path d="M4 12a8 8 0 0 1 14.9-4"/>
+                <path d="M20 8v4h-4"/>
+              </svg>
+            </button>
+
+          </article>
+
+        </div>
+      </aside>
+
+    </main>
+
+  </div>
+
+  <div
+    class="modal-backdrop hidden"
+    id="crisisModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="crisisModalTitle"
+  >
+
+    <div class="crisis-modal">
+
+      <div class="modal-header">
+
+        <div class="modal-title">
+
+          <div class="danger-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 3 20 6v5c0 5.2-3.4 8.7-8 10-4.6-1.3-8-4.8-8-10V6l8-3Z"/>
+              <path d="M12 8v5"/>
+              <path d="M12 16h.01"/>
+            </svg>
+          </div>
+
+          <div>
+            <h2 id="crisisModalTitle">Crisis Support</h2>
+            <p>Help is available right now.</p>
+          </div>
+
+        </div>
+
+        <button
+          class="icon-btn"
+          id="closeCrisisBtn"
+          type="button"
+          aria-label="Close"
+        >
+          <svg viewBox="0 0 24 24">
+            <path d="m6 6 12 12M18 6 6 18"/>
+          </svg>
+        </button>
+
+      </div>
+
+      <p class="crisis-intro">
+        If you're in immediate danger, thinking about harming yourself,
+        or feel unable to stay safe, contact emergency or crisis support now.
+      </p>
+
+      <div class="crisis-list">
+
+        <a class="crisis-item" href="tel:14416">
+          <div>
+            <span>India</span>
+            <strong>Tele-MANAS</strong>
+          </div>
+
+          <div class="crisis-number">
+            14416
+            <svg viewBox="0 0 24 24">
+              <path d="M5 12h14M13 6l6 6-6 6"/>
+            </svg>
+          </div>
+        </a>
+
+        <a class="crisis-item" href="tel:988">
+          <div>
+            <span>United States & Canada</span>
+            <strong>988 Suicide & Crisis Lifeline</strong>
+          </div>
+
+          <div class="crisis-number">
+            988
+            <svg viewBox="0 0 24 24">
+              <path d="M5 12h14M13 6l6 6-6 6"/>
+            </svg>
+          </div>
+        </a>
+
+        <a
+          class="crisis-item"
+          href="https://findahelpline.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div>
+            <span>International</span>
+            <strong>Find a local crisis line</strong>
+          </div>
+
+          <div class="crisis-number">
+            Open
+            <svg viewBox="0 0 24 24">
+              <path d="M14 5h5v5"/>
+              <path d="m19 5-8 8"/>
+              <path d="M18 13v5H5V6h5"/>
+            </svg>
+          </div>
+        </a>
+
+      </div>
+
+      <p class="modal-disclaimer">
+        Rani is an AI wellness assistant and cannot replace professional
+        or emergency care.
+      </p>
+
+      <button
+        class="primary-btn full-width"
+        id="crisisCloseBottomBtn"
+        type="button"
+      >
+        I understand
+      </button>
+
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
